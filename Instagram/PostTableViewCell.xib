@@ -54,9 +54,6 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00v-oD-80B">
                         <rect key="frame" x="130" y="347" width="40" height="40"/>
                         <state key="normal" image="comment"/>
-                        <connections>
-                            <action selector="commentButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bhv-hW-APo"/>
-                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="コメント" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wYr-fl-P4V">
                         <rect key="frame" x="30" y="422.5" width="50" height="14.5"/>
@@ -101,7 +98,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="72b-zl-LHg" id="sdf-LO-60a"/>
-                <outlet property="commentButton" destination="00v-oD-80B" id="AAH-L4-U1G"/>
+                <outlet property="commentButton" destination="00v-oD-80B" id="ksl-Ya-szY"/>
                 <outlet property="commentViewLabel" destination="QF0-ke-ZKG" id="uo0-gk-2Da"/>
                 <outlet property="dateLabel" destination="wCk-6A-kFw" id="oWn-Ol-14Y"/>
                 <outlet property="likeButton" destination="Fdq-CF-rcl" id="WfF-uG-EgY"/>

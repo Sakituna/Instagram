@@ -9,18 +9,22 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var commentNameLabel: UILabel!
     @IBOutlet weak var commentTextField: UITextField!
     
+    var postData: PostData!
     //送信ボタンが押された
     @IBAction func handleSendButton(_ sender: Any) {
-        // コメントの保存場所を定義する
-        let commentRef = Firestore.firestore().collection(Const.PostPath).document()
+
         
         // FireStoreに投稿データを保存する
         let name = Auth.auth().currentUser?.displayName
-        let postDic = [
-            "name": name!,
-            "postComment": self.commentTextField.text!,
-        ] as [String : Any]
-        commentRef.setData(postDic)
+        
+        let commentData = name! + ";" + self.commentTextField.text!
+        
+        let updateValue: FieldValue = FieldValue.arrayUnion([commentData])
+        
+        // commentに更新データを書き込む
+        let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+        postRef.updateData(["comments": updateValue])
+        
         // HUDで投稿完了を表示する
         SVProgressHUD.showSuccess(withStatus: "コメントを投稿しました")
         // 投稿処理が完了したので先頭画面に戻る

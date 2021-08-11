@@ -65,14 +65,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // セル内のLIKEボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleLikeButton(_:forEvent:)), for: .touchUpInside)
         
-        // コメントを更新する
-        let myid = Auth.auth().currentUser?.uid
-        // 更新データを作成する
-        var updateValue: FieldValue
-        updateValue = FieldValue.arrayUnion([myid])
-        // コメントの更新データを書き込む
-        let commentRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-        commentRef.updateData(["postComment": updateValue])
+        // セル内のコメントボタンのアクションをソースコードで設定する
+        cell.commentButton.addTarget(self, action:#selector(handleCommentButton(_:forEvent:)), for: .touchUpInside)
         
         return cell
     }
@@ -108,10 +102,20 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //課題で追加
     // Commentボタンがタップされた時に呼ばれるメソッド
-    @objc func handleCommentButton(_ sender: Any) {
+    @objc func handleCommentButton(_ sender: UIButton, forEvent event: UIEvent) {
         print("DEBUG_PRINT: commentボタンがタップされました。")
         
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "comment") as! CommentViewController
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        vc.postData = postData
         self.present(vc, animated: true, completion: nil)
+        
     }
 }
