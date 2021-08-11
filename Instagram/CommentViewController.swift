@@ -4,8 +4,7 @@ import UIKit
 import Firebase
 
 class CommentViewController: UIViewController {
-    
-    
+
     @IBOutlet weak var commentNameLabel: UILabel!
     @IBOutlet weak var commentTextField: UITextField!
     
@@ -22,17 +21,8 @@ class CommentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        // 表示名を取得してLabelに設定する
-        let user = Auth.auth().currentUser
-        if let user = user {
-            commentNameLabel.text = user.displayName
-        }
-    }
 }
+

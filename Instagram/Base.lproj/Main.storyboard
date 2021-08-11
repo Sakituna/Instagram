@@ -153,7 +153,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="commentName" destination="ooG-Yb-nmW" id="oDW-bz-JwK"/>
+                        <outlet property="commentNameLabel" destination="ooG-Yb-nmW" id="YRu-si-cnA"/>
                         <outlet property="commentTextField" destination="YgJ-Kj-zae" id="OVB-ig-ZeU"/>
                     </connections>
                 </viewController>
