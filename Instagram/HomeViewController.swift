@@ -65,6 +65,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // セル内のLIKEボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleLikeButton(_:forEvent:)), for: .touchUpInside)
         
+        // コメントを更新する
+        let myid = Auth.auth().currentUser?.uid
+        // 更新データを作成する
+        var updateValue: FieldValue
+        updateValue = FieldValue.arrayUnion([myid])
+        // コメントの更新データを書き込む
+        let commentRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+        commentRef.updateData(["postComment": updateValue])
+        
         return cell
     }
     
@@ -104,15 +113,5 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "comment") as! CommentViewController
         self.present(vc, animated: true, completion: nil)
-        
-        // コメントを更新する
-        let myid = Auth.auth().currentUser?.uid
-        // 更新データを作成する
-        var updateValue: FieldValue
-        // 今回新たにいいねを押した場合は、myidを追加する更新データを作成
-        updateValue = FieldValue.arrayUnion([myid])
-        // likesに更新データを書き込む
-        let commentRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
-        commentRef.updateData(["postComment": updateValue])
     }
 }
