@@ -61,11 +61,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QF0-ke-ZKG">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QF0-ke-ZKG">
                         <rect key="frame" x="30" y="442" width="300" height="20.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="300" id="MbX-rS-r7o"/>
                         </constraints>
+                        <string key="text" base64-UTF8="YES">
+TGFiZWwRA
+</string>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -98,8 +101,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="captionLabel" destination="72b-zl-LHg" id="sdf-LO-60a"/>
-                <outlet property="commentButton" destination="00v-oD-80B" id="ksl-Ya-szY"/>
-                <outlet property="commentViewLabel" destination="QF0-ke-ZKG" id="uo0-gk-2Da"/>
+                <outlet property="commentButton" destination="00v-oD-80B" id="AAH-L4-U1G"/>
+                <outlet property="commentViewLabel" destination="QF0-ke-ZKG" id="nTg-DX-rmw"/>
                 <outlet property="dateLabel" destination="wCk-6A-kFw" id="oWn-Ol-14Y"/>
                 <outlet property="likeButton" destination="Fdq-CF-rcl" id="WfF-uG-EgY"/>
                 <outlet property="likeLabel" destination="xcO-cz-1di" id="tuw-Yg-fgS"/>

@@ -35,6 +35,14 @@ class PostTableViewCell: UITableViewCell {
         
         // 投稿されたコメントの表示
         self.commentViewLabel.text = "\(postData.postComment)"
+        
+        //投稿されたコメントの改行
+        //コメントの要素を取り出してfor文で改行を繰り返す指示
+        var commentData = ""
+        for commentText in postData.postComment {
+            commentData += ("\(commentText)\n")
+        }
+        commentViewLabel.text = commentData
 
         // 日時の表示
         self.dateLabel.text = ""
@@ -57,5 +65,6 @@ class PostTableViewCell: UITableViewCell {
             let buttonImage = UIImage(named: "like_none")
             self.likeButton.setImage(buttonImage, for: .normal)
         }
+
     }
 }

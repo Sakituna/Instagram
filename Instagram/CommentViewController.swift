@@ -5,19 +5,18 @@ import Firebase
 import SVProgressHUD
 
 class CommentViewController: UIViewController {
-
-    @IBOutlet weak var commentNameLabel: UILabel!
+    
     @IBOutlet weak var commentTextField: UITextField!
     
     var postData: PostData!
+    
     //送信ボタンが押された
     @IBAction func handleSendButton(_ sender: Any) {
 
-        
         // FireStoreに投稿データを保存する
         let name = Auth.auth().currentUser?.displayName
         
-        let commentData = name! + ";" + self.commentTextField.text!
+        let commentData = name! + " : " + self.commentTextField.text!
         
         let updateValue: FieldValue = FieldValue.arrayUnion([commentData])
         

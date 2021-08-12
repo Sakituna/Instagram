@@ -104,14 +104,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooG-Yb-nmW">
-                                <rect key="frame" x="186" y="104" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-Kj-zae">
-                                <rect key="frame" x="32" y="135" width="350" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="コメントを入力してください" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgJ-Kj-zae">
+                                <rect key="frame" x="32" y="154" width="350" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="350" id="Gik-G2-LTa"/>
                                 </constraints>
@@ -119,7 +113,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xY3-TN-jxC">
-                                <rect key="frame" x="57" y="179" width="300" height="40"/>
+                                <rect key="frame" x="57" y="198" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="hGp-Ys-sFJ"/>
                                 </constraints>
@@ -129,7 +123,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Qp-KZ-kmy">
-                                <rect key="frame" x="57" y="229" width="300" height="40"/>
+                                <rect key="frame" x="57" y="248" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="zGf-b2-b3x"/>
                                 </constraints>
@@ -142,18 +136,15 @@
                         <viewLayoutGuide key="safeArea" id="i2v-Zu-mCw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ooG-Yb-nmW" firstAttribute="top" secondItem="i2v-Zu-mCw" secondAttribute="top" constant="60" id="0mm-o8-yTS"/>
                             <constraint firstItem="8Qp-KZ-kmy" firstAttribute="centerX" secondItem="rjb-uX-paB" secondAttribute="centerX" id="3rA-Be-U8v"/>
-                            <constraint firstItem="YgJ-Kj-zae" firstAttribute="top" secondItem="ooG-Yb-nmW" secondAttribute="bottom" constant="10" id="EjQ-dd-MaP"/>
                             <constraint firstItem="8Qp-KZ-kmy" firstAttribute="top" secondItem="xY3-TN-jxC" secondAttribute="bottom" constant="10" id="aWZ-AI-1l6"/>
+                            <constraint firstItem="YgJ-Kj-zae" firstAttribute="top" secondItem="i2v-Zu-mCw" secondAttribute="top" constant="110" id="bOG-ZD-mgl"/>
                             <constraint firstItem="xY3-TN-jxC" firstAttribute="top" secondItem="YgJ-Kj-zae" secondAttribute="bottom" constant="10" id="cWg-cu-M2d"/>
                             <constraint firstItem="YgJ-Kj-zae" firstAttribute="centerX" secondItem="rjb-uX-paB" secondAttribute="centerX" id="p6T-FJ-Lcu"/>
                             <constraint firstItem="xY3-TN-jxC" firstAttribute="centerX" secondItem="rjb-uX-paB" secondAttribute="centerX" id="t0h-ob-pWT"/>
-                            <constraint firstItem="ooG-Yb-nmW" firstAttribute="centerX" secondItem="rjb-uX-paB" secondAttribute="centerX" id="vlL-U2-Wip"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="commentNameLabel" destination="ooG-Yb-nmW" id="YRu-si-cnA"/>
                         <outlet property="commentTextField" destination="YgJ-Kj-zae" id="OVB-ig-ZeU"/>
                     </connections>
                 </viewController>
